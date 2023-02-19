@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clients",
+  "info": {
+    "singularName": "client",
+    "pluralName": "clients",
+    "displayName": "client",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "Erkek",
+        "Kadın",
+        "Boş"
+      ],
+      "default": "Boş",
+      "pluginOptions": {}
+    },
+    "birth_date": {
+      "type": "date",
+      "pluginOptions": {}
+    }
+  }
+}
