@@ -20,7 +20,7 @@
     },
     "start_time": {
       "type": "datetime",
-      "unique": true,
+      "unique": false,
       "required": true
     },
     "end_time": {
@@ -32,6 +32,17 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::client.client"
+    },
+    "is_completed": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_paid": {
+      "type": "boolean",
+      "default": false
+    },
+    "price": {
+      "type": "integer"
     }
   }
 }
