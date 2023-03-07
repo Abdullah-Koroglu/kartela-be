@@ -62,6 +62,12 @@
       "target": "plugin::users-permissions.role",
       "inversedBy": "users",
       "configurable": false
+    },
+    "tc_id": {
+      "unique": true,
+      "min": "9999999999",
+      "max": "99999999999",
+      "type": "biginteger"
     }
   }
 }

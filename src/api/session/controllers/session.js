@@ -12,12 +12,12 @@ const { ValidationError } = require("@strapi/utils").errors;
 const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::session.session', ({ strapi }) => ({
-  // Method 1: Creating an entirely custom action
+
   async checkAndCreate(ctx) {
     try {
-      // some logic here
+
       const {start_time, end_time, room} = ctx.request.body.data
-      // console.log (room)
+
       const occupation = await strapi.db.query('api::session.session').count({
         where: {
           $and: [
@@ -26,7 +26,7 @@ module.exports = createCoreController('api::session.session', ({ strapi }) => ({
                 {
                   $and: [
                     {
-                      end_time: {$gte: start_time}
+                      end_time: {$gt: start_time}
                     },
                     {
                       end_time: {$lte: end_time}
@@ -39,17 +39,17 @@ module.exports = createCoreController('api::session.session', ({ strapi }) => ({
                       start_time: {$gte: start_time}
                     },
                     {
-                      start_time: {$lte: end_time}
+                      start_time: {$lt: end_time}
                     },
                   ]
                 },
                 {
                   $and: [
                     {
-                      end_time: {$gte: end_time}
+                      end_time: {$gt: end_time}
                     },
                     {
-                      start_time: {$lte: start_time}
+                      start_time: {$lt: start_time}
                     },
                   ]
                 },

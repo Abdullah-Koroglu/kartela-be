@@ -31,10 +31,21 @@
       "type": "date",
       "pluginOptions": {}
     },
-    "users_permissions_user": {
+    "therapist": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "required": false
+    },
+    "tc_id": {
+      "type": "biginteger",
+      "min": "9999999999",
+      "max": "99999999999",
+      "unique": true
     }
   }
 }

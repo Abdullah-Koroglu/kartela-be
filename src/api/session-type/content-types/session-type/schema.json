@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "session_types",
+  "info": {
+    "singularName": "session-type",
+    "pluralName": "session-types",
+    "displayName": "session-type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "is_for_event": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -34,15 +34,21 @@
       "target": "api::client.client"
     },
     "is_completed": {
-      "type": "boolean",
-      "default": false
+      "type": "boolean"
     },
     "is_paid": {
-      "type": "boolean",
-      "default": false
+      "type": "boolean"
     },
     "price": {
       "type": "integer"
+    },
+    "session_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::session-type.session-type"
+    },
+    "notes": {
+      "type": "richtext"
     }
   }
 }
